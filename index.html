@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Clothing </title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding:auto;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        header, footer {
+            background-color:pink;
+            color:red ;
+            text-align: center;
+            padding: 1rem;
+            width: 100%;
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            color:black;
+            z-index: 100;
+        }
+
+        .logo {
+            float: right;
+            margin-right: 1rem;
+        }
+        nav {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        nav ul {
+            list-style-type:square;
+            padding:0 ;
+            display: inline-block;
+            color: blue;
+        }
+
+        nav ul li {
+            display: inline-block;
+            position: relative;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bolder;
+        }
+
+        nav ul li select {
+            
+            top: 100%;
+            left: 0;
+            width: 100%;
+        }
+
+       
+        
+
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: 200px;
+            background-color: #333;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            height: 100%;
+            transition: left 0.3s;
+            padding-top: 60px;
+        }
+
+        .sidebar.active {
+            left: 0;
+        }
+
+        .sidebar h2 {
+            color: white;
+            text-align: center;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Sidebar Form Styles */
+        .sidebar form {
+            padding: 20px;
+            color: white;
+        }
+
+        .sidebar form input[type="text"], .sidebar form input[type="email"], .sidebar form input[type="password"] {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .sidebar form input[type="submit"] {
+            width: 95%;
+            padding: 10px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        /* Menu button styles */
+        .menu-button {
+            position: fixed;
+            top:80px;
+            left: 15px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            z-index: 100;
+        }
+
+        /* Footer Styles */
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .content {
+            padding: 180px 20px;
+            margin-left: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            nav ul li {
+                display: inline-block;
+                margin-right: 0;
+                margin-bottom: 10px;
+                width:80px;
+            }
+
+            nav ul li select {
+                width: 100%;
+            }
+
+            .sidebar {
+                width: 200px;
+            }
+
+            .content {
+                padding: 160px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header with logo and navigation -->
+    <header>
+        <img src="logo.png" alt="Logo" class="logo" width="50" height="50">
+        
+       <nav>
+            <ul>
+                <li><a href="#home"></a>
+                    <select>
+                        <option selected>Home</option>
+                        <option>Brand Greetings </option>
+                        <option>Featured clothes</option>
+                        <option>Customer Reviews</option>
+                    </select>
+                </li>
+                <li><a href="#about"></a>
+                    <select>
+                        <option selected>About</option>
+                        <option>Fashion Style</option>
+                        <option>Types of Fabric Used</option>
+                        <option>Company's Awards </option>
+                    </select>
+                </li>
+                <li><a href="#services"></a>
+                    <select>
+                        <option selected>Services</option>
+                        <option>Menu</option>
+                        <option>Packaging</option>
+                        <option>Brands Quality </option>
+                    </select>
+                
+                </li>
+               
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="FashionClothing">
+        <h2>Register</h2>
+        <form action="#">
+            <input type="text" name="fullname" placeholder="Full Name" required><br>
+            <input type="email" name="email" placeholder="Email Address" required><br>
+            <input type="password" name="password" placeholder="Password" required><br>
+            <input type="submit" value="Register">
+        </form>
+
+        
+    </div>
+
+    <!-- Menu button to toggle sidebar -->
+    <button class="menu-button" onclick="toggleSidebar()">☰ Menu</button>
+
+    <!-- Main content -->
+    <div class="content">
+        <h1>Welcome to Fashion Clothing </h1>
+        <p>Here you can find Quality in style </p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Fashion Clothing . All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById("FashionClothing");
+            sidebar.classList.toggle("active");
+        }
+    </script>
+
+</body>
+</html>
